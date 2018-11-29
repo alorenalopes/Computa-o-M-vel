@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Money Lorena</string>
+    <string name="app_valoresvalidos">Informe valores corretos</string>
+    <string name="app_validos">Dados inconsistentes</string>
+</resources>

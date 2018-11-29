@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "631917110431",
+    "firebase_url": "https://mymoneylopeslorena.firebaseio.com",
+    "project_id": "mymoneylopeslorena",
+    "storage_bucket": "mymoneylopeslorena.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631917110431:android:bf53504717036668",
+        "android_client_info": {
+          "package_name": "br.lorena.ufop.mymoneylopeslorena"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631917110431-ra67gj4mheftodunucmmtvdjgp94ng6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5F5hccbqA58y21_xT0xBC1QCZkKgBw4M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
