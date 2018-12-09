@@ -94,6 +94,30 @@
                 android:text="Veja seu histórico"
                 style="@style/CustomButton"/>
 
+        <Button android:id="@+id/app_grafico"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Estatísticas"
+                style="@style/CustomButton"/>
+
+        <Button android:id="@+id/app_grafico"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Cotação do dia"
+                style="@style/CustomButton"/>
+
+
+        <View android:layout_width="200dp"
+              android:layout_height="30dp"/>
+
+        <LinearLayout
+                android:id="@+id/graficototal_id"
+                android:layout_width="wrap_content"
+                android:layout_height="280dp"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>

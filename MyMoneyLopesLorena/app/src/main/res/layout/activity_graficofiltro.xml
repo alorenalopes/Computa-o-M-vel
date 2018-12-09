@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".GraficofiltroActivity">
+
+<LinearLayout android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    android:layout_height="20dp"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="40dp"
+                  android:orientation="horizontal">
+
+        <EditText
+                android:id="@+id/filtro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Digite um mês"
+                android:layout_weight="1"
+                style="@style/CustomEditText"
+                android:inputType="number"/>
+
+
+        <Button
+                android:text="Buscar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:id="@+id/button_Filtro"
+                style="@style/CustomButton"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="200dp"
+          android:layout_height="30dp"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Despesas"
+            android:fontFamily="cursive"
+            android:textSize="30dp"
+            style="@style/CustomText"/>
+
+
+    <View android:layout_width="200dp"
+          android:layout_height="1dp"
+          android:layout_gravity="center"
+          android:background="@color/colorText"/>
+
+    <View android:layout_width="200dp"
+          android:layout_height="30dp"/>
+
+
+    <LinearLayout
+            android:id="@+id/grafico_id"
+            android:layout_width="wrap_content"
+            android:layout_height="280dp"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+
+    </LinearLayout>
+
+    <View android:layout_width="200dp"
+          android:layout_height="30dp"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Receitas"
+            android:fontFamily="cursive"
+            android:textSize="30dp"
+            style="@style/CustomText"/>
+
+
+    <View android:layout_width="200dp"
+          android:layout_height="1dp"
+          android:layout_gravity="center"
+          android:background="@color/colorText"/>
+
+    <View android:layout_width="200dp"
+          android:layout_height="30dp"/>
+
+
+    <LinearLayout
+            android:id="@+id/graficoR_id"
+            android:layout_width="wrap_content"
+            android:layout_height="280dp"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

@@ -26,6 +26,10 @@
         </activity>
         <activity android:name=".AlterarExcluirReceitaActivity">
         </activity>
+        <activity android:name=".GraficoActivity">
+        </activity>
+        <activity android:name=".GraficofiltroActivity">
+        </activity>
     </application>
 
 </manifest>

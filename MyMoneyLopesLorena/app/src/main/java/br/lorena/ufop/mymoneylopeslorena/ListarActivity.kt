@@ -120,6 +120,4 @@ class ListarActivity : Activity(), View.OnClickListener {
 
             })
     }
-
-
 }

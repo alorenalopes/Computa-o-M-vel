@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "631917110431-qgthqf9mllhabugu9omrho1bpficcp7k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.lorena.ufop.mymoneylopeslorena",
+            "certificate_hash": "5c13794457b0ceeba4099fa98a5e7a5809d19838"
+          }
+        },
+        {
           "client_id": "631917110431-ra67gj4mheftodunucmmtvdjgp94ng6h.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631917110431-ra67gj4mheftodunucmmtvdjgp94ng6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
