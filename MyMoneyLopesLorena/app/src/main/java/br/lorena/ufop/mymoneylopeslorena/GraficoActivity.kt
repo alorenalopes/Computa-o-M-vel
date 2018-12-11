@@ -39,7 +39,10 @@ class GraficoActivity : Activity(), View.OnClickListener {
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onClick(v: View) {
-        if(filtro.text.isEmpty() || filtro.text.toString().toInt() < 1 || filtro.text.toString().toInt() > 12){
+        if(filtro.text.isEmpty()){
+            grafico()
+        }
+        else if(filtro.text.toString().toInt() < 1 || filtro.text.toString().toInt() > 12){
             Toast.makeText(this,"Digite um mês válido", Toast.LENGTH_LONG).show()
         }else{
             mes = filtro.text.toString().toInt()

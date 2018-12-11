@@ -2,6 +2,7 @@ package br.lorena.ufop.mymoneylopeslorena
 
 import android.app.Activity
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -68,12 +69,14 @@ class DespesaActivity : Activity(), View.OnClickListener {
             tipo = 6
         }
 
-            if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() &&
+            if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() && valor != "." &&
                 valor.toDouble() >= 0 && dia.toInt() > 0 && dia.toInt() <= 31 && mes.toInt() > 0 && mes.toInt() <= 12 && ano.toInt() >= 2018
-                && ano.length == 4 && tipo != 0 && tipo == 6 && extra.isNotEmpty()) {
+                && ano.length == 4 && tipo != 0 && tipo == 6 && extra.isNotEmpty() && extra != "") {
 
                 try {
                     add(valor.toDouble(), dia.toInt(), mes.toInt(), ano.toInt(), extra, tipo)
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
                     finish()
 
                 } catch (nfe: NumberFormatException) {
@@ -82,12 +85,14 @@ class DespesaActivity : Activity(), View.OnClickListener {
                 }
             }
 
-            else if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() &&
+            else if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() && valor != "." &&
                 valor.toDouble() >= 0 && dia.toInt() > 0 && dia.toInt() <= 31 && mes.toInt() > 0 && mes.toInt() <= 12 && ano.toInt() >= 2018
                 && ano.length == 4 && tipo != 0 && tipo != 6) {
 
                 try {
                     add(valor.toDouble(), dia.toInt(), mes.toInt(), ano.toInt(), extra, tipo)
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
                     finish()
 
                 } catch (nfe: NumberFormatException) {

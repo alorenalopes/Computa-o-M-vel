@@ -34,11 +34,12 @@ class MainActivity : Activity(), View.OnClickListener {
         app_neg.setOnClickListener(this)
         app_listar.setOnClickListener(this)
         app_grafico.setOnClickListener(this)
+        app_cot.setOnClickListener(this)
 
         firestoreDB = FirebaseFirestore.getInstance()
 
         somar()
-        graficototal()
+
     }
 
     override fun onClick(v: View) {
@@ -52,6 +53,15 @@ class MainActivity : Activity(), View.OnClickListener {
         } else if (id == R.id.app_grafico) {
             grafico()
         }
+        else if (id == R.id.app_cot) {
+            cotacao()
+        }
+    }
+
+    private fun cotacao() {
+        val intent = Intent(this, CambioActivity::class.java)
+        startActivity(intent)
+
     }
 
     private fun grafico() {
@@ -76,6 +86,7 @@ class MainActivity : Activity(), View.OnClickListener {
         startActivity(intent)
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ResourceAsColor")
     private fun somar() {
 
@@ -108,36 +119,40 @@ class MainActivity : Activity(), View.OnClickListener {
                     edit_Situacao.text = "Vou ter que pedir dinheiro pra vovó"
                     edit_Situacao.setBackgroundColor(resources.getColor(R.color.red))
                 }
-            })
-    }
-
-    @RequiresApi(Build.VERSION_CODES.M)
-    private fun graficototal() {
-
-        firestoreListener = firestoreDB!!.collection("historico")
-            .addSnapshotListener(EventListener { documentSnapshots, e ->
-                if (e != null) {
-                    Log.e(TAG, "Erro", e)
-                    return@EventListener
-                }
-
-                val historicoList = mutableListOf<HistoricoActivity>()
-
-                for (doc in documentSnapshots!!) {
-                    val historico = doc.toObject(HistoricoActivity::class.java)
-                    historico.id = doc.id
-                    historicoList.add(historico)
-                }
 
                 var total = mutableListOf<SliceValue>()
                 var valordespesa = 0.0
                 var valorreceita = 0.0
 
                 for(i  in historicoList){
-                    if(i.valor!! < 0){
+                    if(i.valor!! < 0 &&  i.tipo == 1){
                         valordespesa += i.valor!!
                     }
-                    if(i.valor!! > 0){
+                    if(i.valor!! < 0 &&  i.tipo == 2){
+                        valordespesa += i.valor!!
+                    }
+                    if(i.valor!! < 0 &&  i.tipo == 3){
+                        valordespesa += i.valor!!
+                    }
+                    if(i.valor!! < 0 &&  i.tipo == 4){
+                        valordespesa+= i.valor!!
+                    }
+                    if(i.valor!! < 0 &&  i.tipo == 5){
+                        valordespesa += i.valor!!
+                    }
+                    if(i.valor!! < 0 &&  i.tipo == 6){
+                        valordespesa += i.valor!!
+                    }
+                    if(i.valor!! > 0 &&  i.tipo == 7){
+                        valorreceita += i.valor!!
+                    }
+                    if(i.valor!! > 0 &&  i.tipo == 8){
+                        valorreceita += i.valor!!
+                    }
+                    if(i.valor!! > 0 &&  i.tipo == 9){
+                        valorreceita += i.valor!!
+                    }
+                    if(i.valor!! > 0 &&  i.tipo == 10){
                         valorreceita += i.valor!!
                     }
                 }
@@ -152,6 +167,7 @@ class MainActivity : Activity(), View.OnClickListener {
 
             })
     }
+
 }
 
 

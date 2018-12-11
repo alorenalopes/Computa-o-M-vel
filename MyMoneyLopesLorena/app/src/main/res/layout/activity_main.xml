@@ -100,7 +100,7 @@
                 android:text="Estatísticas"
                 style="@style/CustomButton"/>
 
-        <Button android:id="@+id/app_grafico"
+        <Button android:id="@+id/app_cot"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Cotação do dia"

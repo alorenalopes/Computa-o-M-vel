@@ -93,9 +93,9 @@ class AlterarExcluirDespesaActivity : Activity(), View.OnClickListener  {
             }
 
 
-            if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() &&
+            if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() && valor != "." &&
                 valor.toDouble() >= 0 && dia.toInt() > 0 && dia.toInt() <= 31 && mes.toInt() > 0 && mes.toInt() <= 12 && ano.toInt() >= 2018
-                && ano.length == 4 && tipo!=0 && tipo == 4 && extra.isNotEmpty() &&id.isNotEmpty()) {
+                && ano.length == 4 && tipo!=0 && tipo == 6 && extra.isNotEmpty() && extra != "" && id.isNotEmpty()) {
                 try {
                   update(id, valor.toDouble(), dia.toInt(), mes.toInt(), ano.toInt(), extra, tipo)
                     val intent = Intent(this, MainActivity::class.java)
@@ -108,9 +108,9 @@ class AlterarExcluirDespesaActivity : Activity(), View.OnClickListener  {
                 }
             }
 
-            else if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() &&
+            else if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() && valor != "." &&
                 valor.toDouble() >= 0 && dia.toInt() > 0 && dia.toInt() <= 31 && mes.toInt() > 0 && mes.toInt() <= 12 && ano.toInt() >= 2018
-                && ano.length == 4 && tipo!=0 && tipo !=4 &&id.isNotEmpty()) {
+                && ano.length == 4 && tipo!=0 && tipo !=6 &&id.isNotEmpty()) {
                 try {
                     update(id, valor.toDouble(), dia.toInt(), mes.toInt(), ano.toInt(), extra, tipo)
                     val intent = Intent(this, MainActivity::class.java)

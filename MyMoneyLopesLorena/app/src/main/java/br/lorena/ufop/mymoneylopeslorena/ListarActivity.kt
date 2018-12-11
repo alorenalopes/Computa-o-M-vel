@@ -69,15 +69,17 @@ class ListarActivity : Activity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-      if(filtro.text.isEmpty() || filtro.text.toString().toInt() < 1 || filtro.text.toString().toInt() > 12){
-          Toast.makeText(this,"Digite um mês válido",Toast.LENGTH_LONG).show()
-      }else{
-          mes = filtro.text.toString().toInt()
-          filtrar()
-      }
+        if (filtro.text.isEmpty()) {
+            criar()
+        } else if (filtro.text.toString().toInt() < 1 || filtro.text.toString().toInt() > 12) {
+            Toast.makeText(this, "Digite um mês válido", Toast.LENGTH_LONG).show()
+        } else {
+            mes = filtro.text.toString().toInt()
+            filtrar()
         }
+    }
 
-    private fun criar(){
+    private fun criar() {
         firestoreListener = firestoreDB!!.collection("historico").orderBy("mes").orderBy("dia")
             .addSnapshotListener(EventListener { documentSnapshots, e ->
                 if (e != null) {
@@ -99,8 +101,8 @@ class ListarActivity : Activity(), View.OnClickListener {
             })
     }
 
-    private fun filtrar(){
-        firestoreListener = firestoreDB!!.collection("historico").whereEqualTo("mes", mes).orderBy("dia")
+    private fun filtrar() {
+        firestoreListener = firestoreDB!!.collection("historico").orderBy("dia").whereEqualTo("mes", mes)
             .addSnapshotListener(EventListener { documentSnapshots, e ->
                 if (e != null) {
                     Log.e(TAG, "Erro", e)

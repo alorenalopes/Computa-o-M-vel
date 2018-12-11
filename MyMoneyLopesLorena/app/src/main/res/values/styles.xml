@@ -38,4 +38,9 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="LoginTheme" parent="FirebaseUI">
+        <item name="colorPrimary">@color/colorDark</item>
+        <item name="android:windowBackground">@drawable/view_background</item>
+    </style>
+
 </resources>

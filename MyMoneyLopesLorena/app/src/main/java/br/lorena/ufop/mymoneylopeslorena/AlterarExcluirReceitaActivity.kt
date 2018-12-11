@@ -43,11 +43,11 @@ class AlterarExcluirReceitaActivity : Activity(), View.OnClickListener {
             edit_extra.setText(bundle.getString("UpdateDescricao"))
             tipo = (bundle.getInt("UpdateTipo"))
 
-            if (tipo == 1) {
+            if (tipo == 7) {
                 button_Salario.isChecked = true
-            } else if (tipo == 2) {
+            } else if (tipo == 8) {
                 button_Premio.isChecked = true
-            } else if (tipo == 3) {
+            } else if (tipo == 9) {
                 button_Presente.isChecked = true
             } else {
                 button_outros.isChecked = true
@@ -75,19 +75,19 @@ class AlterarExcluirReceitaActivity : Activity(), View.OnClickListener {
             val extra = edit_extra.text.toString()
 
             if (button_Salario.isChecked) {
-                tipo = 1
+                tipo = 7
             } else if (button_Premio.isChecked) {
-                tipo = 2
+                tipo = 8
             } else if (button_Presente.isChecked) {
-                tipo = 3
+                tipo = 9
             } else {
-                tipo = 4
+                tipo = 10
             }
 
 
-            if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() &&
+            if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() && valor != "." &&
                 valor.toDouble() >= 0 && dia.toInt() > 0 && dia.toInt() <= 31 && mes.toInt() > 0 && mes.toInt() <= 12 && ano.toInt() >= 2018
-                && ano.length == 4 && tipo!=0 && tipo == 4 && extra.isNotEmpty() &&id.isNotEmpty()) {
+                && ano.length == 4 && tipo!=0 && tipo == 10 && extra.isNotEmpty() && extra != "" && id.isNotEmpty()) {
                 try {
                     update(id, valor.toDouble(), dia.toInt(), mes.toInt(), ano.toInt(), extra, tipo)
                     val intent = Intent(this, MainActivity::class.java)
@@ -100,9 +100,9 @@ class AlterarExcluirReceitaActivity : Activity(), View.OnClickListener {
                 }
             }
 
-           else if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() &&
+           else if (valor.isNotEmpty() && dia.isNotEmpty() && mes.isNotEmpty() && ano.isNotEmpty() && valor != "." &&
                 valor.toDouble() >= 0 && dia.toInt() > 0 && dia.toInt() <= 31 && mes.toInt() > 0 && mes.toInt() <= 12 && ano.toInt() >= 2018
-                && ano.length == 4 && tipo!=0 && tipo !=4 &&id.isNotEmpty()) {
+                && ano.length == 4 && tipo!=0 && tipo !=10 &&id.isNotEmpty()) {
                 try {
                     update(id, valor.toDouble(), dia.toInt(), mes.toInt(), ano.toInt(), extra, tipo)
                     val intent = Intent(this, MainActivity::class.java)
